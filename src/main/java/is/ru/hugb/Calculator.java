@@ -6,9 +6,25 @@ public	class	Calculator	{
 		{
 			return 0;
 		}
+		else if(text.contains(","))
+		{
+			String numbers[] = text.split(",");
+			return sum(numbers);
+		}
 		else 
 		{
-			return Integer.parseInt(text);
+			return toInt(text);
 		}
 	}
+	private static int toInt(String number){
+		return Integer.parseInt(number);
+	}
+	private static int sum(String [] numbers){
+		int total = 0;
+		for(int i = 0; i < numbers.length; i++){
+			total += toInt(numbers[i]);
+		}	
+		return total;
+	}
 }
+	

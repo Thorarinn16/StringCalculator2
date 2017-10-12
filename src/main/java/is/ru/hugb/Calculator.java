@@ -30,6 +30,10 @@ public	class	Calculator	{
 				negativefound = true;
 				negatives += numbers[i] + ",";
 			}
+			if(toInt(numbers[i]) > 1000)
+			{
+				numbers[i] = "0";
+			}
 			total += toInt(numbers[i]);
 		}
 		if(negativefound == true)

@@ -29,4 +29,8 @@ public class	CalculatorTest	{
 	public void testNegativeNumber() {
 			assertEquals("Negatives not allowed:-1", Calculator.add("-1,2,3"));
 	}
+	@Test
+	public void numberOver1000() {
+			assertEquals(2, Calculator.add("1001,2"));
+	}
 }

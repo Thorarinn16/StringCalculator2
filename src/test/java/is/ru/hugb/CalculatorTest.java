@@ -25,4 +25,8 @@ public class	CalculatorTest	{
 	public void testMultipleNumbersLineSeperator() {
 			assertEquals(6, Calculator.add("1\n2,3"));
 	}
+	@Test(expected = IllegalArgumentException.class)
+	public void testNegativeNumber() {
+			assertEquals("Negatives not allowed:-1", Calculator.add("-1,2,3"));
+	}
 }

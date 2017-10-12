@@ -21,10 +21,21 @@ public	class	Calculator	{
 		return Integer.parseInt(number);
 	}
 	private static int sum(String [] numbers){
+		boolean negativefound = false;
+		String negatives = new String();
 		int total = 0;
 		for(int i = 0; i < numbers.length; i++){
+			if(toInt(numbers[i]) < 0)
+			{	
+				negativefound = true;
+				negatives += numbers[i] + ",";
+			}
 			total += toInt(numbers[i]);
-		}	
+		}
+		if(negativefound == true)
+		{
+			throw new IllegalArgumentException ("Negatives not allowed:" +negatives);
+		}		
 		return total;
 	}
 }

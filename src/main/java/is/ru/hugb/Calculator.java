@@ -6,18 +6,7 @@ public	class	Calculator	{
 		if(text.equals(""))
 			return 0;
 		else{
-			if(text.contains("//;\n"))
-			{
-				text = text.replace("//;\n", "");
-			}	
-			if(text.contains("\n"))
-			{
-				text = text.replace("\n", ",");
-			}
-			if(text.contains(";"))
-			{
-				text = text.replace(";", ",");
-			}		
+			text = dealWithDelimeters(text);
 			if(text.contains(",")){
 				String numbers[] = text.split(",");
 				return sum(numbers);
@@ -49,6 +38,21 @@ public	class	Calculator	{
 			throw new IllegalArgumentException ("Negatives not allowed:" +negatives);
 		}		
 		return total;
+	}
+	private static String dealWithDelimeters(String text){
+		if(text.contains("//;\n"))
+			{
+				text = text.replace("//;\n", "");
+			}	
+			if(text.contains("\n"))
+			{
+				text = text.replace("\n", ",");
+			}
+			if(text.contains(";"))
+			{
+				text = text.replace(";", ",");
+			}
+		return text;		
 	}
 }
 	
